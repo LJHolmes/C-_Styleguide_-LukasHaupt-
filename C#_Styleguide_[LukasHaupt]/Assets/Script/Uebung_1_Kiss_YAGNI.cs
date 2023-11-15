@@ -39,7 +39,7 @@ class GameUpdater {
         // Simulation verschiedener Netzwerkstatus
         NetworkStatus networkStatus = game.CheckNetworkStatus();
         if (networkStatus == NetworkStatus.Disconnected) {
-            throw new InvalidOperationException("Please check your internet connection.");
+            throw new NoNetworkConnectionException("Please check your internet connection.");
         } else if (networkStatus == NetworkStatus.Connected) {
             bool updatesAvailable = game.CheckForGameUpdates();
             if (updatesAvailable) {
